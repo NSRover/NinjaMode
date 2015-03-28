@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94D1EA831AC6E4CA000F8054 /* switchIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D1EA821AC6E4CA000F8054 /* switchIcon@2x.png */; };
 		BE7C115219E56B4F001A6220 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7C115119E56B4F001A6220 /* main.m */; };
 		BE7C115519E56B4F001A6220 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7C115419E56B4F001A6220 /* AppDelegate.m */; };
 		BE7C115719E56B4F001A6220 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE7C115619E56B4F001A6220 /* Images.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		94D1EA821AC6E4CA000F8054 /* switchIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switchIcon@2x.png"; sourceTree = "<group>"; };
 		BE7C114C19E56B4F001A6220 /* NinjaMode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NinjaMode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE7C115019E56B4F001A6220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE7C115119E56B4F001A6220 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				BE7C116F19E57841001A6220 /* switchIcon.png */,
+				94D1EA821AC6E4CA000F8054 /* switchIcon@2x.png */,
 				BE7C115319E56B4F001A6220 /* AppDelegate.h */,
 				BE7C115419E56B4F001A6220 /* AppDelegate.m */,
 				BE7C115619E56B4F001A6220 /* Images.xcassets */,
@@ -195,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE7C117019E57841001A6220 /* switchIcon.png in Resources */,
+				94D1EA831AC6E4CA000F8054 /* switchIcon@2x.png in Resources */,
 				BE7C115719E56B4F001A6220 /* Images.xcassets in Resources */,
 				BE7C115A19E56B4F001A6220 /* MainMenu.xib in Resources */,
 			);
