@@ -53,21 +53,62 @@
     
     //Change pref
     if (_darkModeOn) {
-        CFPreferencesSetValue((CFStringRef)@"AppleInterfaceStyle", @"Dark", kCFPreferencesAnyApplication, kCFPreferencesCurrentUser, kCFPreferencesCurrentHost);
+        [self makeItDark];
     }
     else {
-        CFPreferencesSetValue((CFStringRef)@"AppleInterfaceStyle", NULL, kCFPreferencesAnyApplication, kCFPreferencesCurrentUser, kCFPreferencesCurrentHost);
+        [self makeItBright];
     }
-    
-    //update listeners
+}
+
+- (void)makeItDark {
+    //Set theme and update listeners
+    CFPreferencesSetValue((CFStringRef)@"AppleInterfaceStyle", @"Dark", kCFPreferencesAnyApplication, kCFPreferencesCurrentUser, kCFPreferencesCurrentHost);
     dispatch_async(dispatch_get_main_queue(), ^{
         CFNotificationCenterPostNotification(CFNotificationCenterGetDistributedCenter(), (CFStringRef)@"AppleInterfaceThemeChangedNotification", NULL, NULL, YES);
     });
+    
+    //set wallpaper
+    [self changeWallpaperWithImagePath:[@"~/Documents/NinjaModes/dark.png" stringByExpandingTildeInPath]];
+}
 
+- (void)makeItBright {
+    //Set theme and update listeners
+    CFPreferencesSetValue((CFStringRef)@"AppleInterfaceStyle", NULL, kCFPreferencesAnyApplication, kCFPreferencesCurrentUser, kCFPreferencesCurrentHost);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        CFNotificationCenterPostNotification(CFNotificationCenterGetDistributedCenter(), (CFStringRef)@"AppleInterfaceThemeChangedNotification", NULL, NULL, YES);
+    });
+    
+    //set wallpaper
+    [self changeWallpaperWithImagePath:[@"~/Documents/NinjaModes/bright.png" stringByExpandingTildeInPath]];
+}
+
+- (void)changeWallpaperWithImagePath:(NSString *)path {
+    
+    //If NinjaModes directory does not exist, assume not interested.
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[@"~/Documents/NinjaModes" stringByExpandingTildeInPath]]) {
+        return;
+    }
+    
+    NSError *error;
+    [[NSWorkspace sharedWorkspace] setDesktopImageURL:[NSURL fileURLWithPath:path]
+                                            forScreen:[NSScreen mainScreen]
+                                              options:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                       nil, NSWorkspaceDesktopImageFillColorKey,
+                                                       [NSNumber numberWithBool:NO], NSWorkspaceDesktopImageAllowClippingKey,
+                                                       [NSNumber numberWithInteger:NSImageScaleProportionallyUpOrDown], NSWorkspaceDesktopImageScalingKey, nil]
+                                                error:&error];
+    if (error) {
+        [[NSApplication sharedApplication] presentError: error
+                                         modalForWindow: self.window
+                                               delegate: nil
+                                     didPresentSelector: nil
+                                            contextInfo: NULL];
+    }
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
-    // Insert code here to tear down your application
+    //Attempt to restore things back the way we found them
+    [self makeItBright];
 }
 
 @end
