@@ -25,7 +25,7 @@
     [_statusItem.image setTemplate:YES];
 
     _statusItem.highlightMode = NO;
-    _statusItem.toolTip = @"command-click to quit";
+    _statusItem.toolTip = @"control-click to quit";
     
     [_statusItem setAction:@selector(itemClicked:)];
     [self refreshDarkMode];
