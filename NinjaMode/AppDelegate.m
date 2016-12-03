@@ -32,7 +32,7 @@
 }
 
 - (void)refreshDarkMode {
-    NSString * value = (__bridge NSString *)(CFPreferencesCopyValue((CFStringRef)@"AppleInterfaceStyle", kCFPreferencesAnyApplication, kCFPreferencesCurrentUser, kCFPreferencesCurrentHost));
+    NSString * value = [[NSUserDefaults standardUserDefaults] stringForKey:@"AppleInterfaceStyle"];
     if ([value isEqualToString:@"Dark"]) {
         self.darkModeOn = YES;
     }
