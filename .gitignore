@@ -2,5 +2,5 @@
 NinjaMode.xcodeproj/xcuserdata/nirbhay.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
 
 *.xccheckout
-
+*xcuserdata*
 *.xcuserstate
