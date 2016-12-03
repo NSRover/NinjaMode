@@ -43,20 +43,19 @@
 }
 
 - (void)itemClicked:(id)sender {
-    
-    //Look for control click
+    //Look for control click, close app if so
     NSEvent *event = [NSApp currentEvent];
     if([event modifierFlags] & NSControlKeyMask) {
         [[NSApplication sharedApplication] terminate:self];
         return;
     }
     
-    //Toggle darkMode
-    _darkModeOn = !_darkModeOn;
-
     //Change theme
     [self toggleTheme];
 
+    //Toggle darkMode
+    _darkModeOn = !_darkModeOn;
+    
     //Change desktop
     if (_darkModeOn) {
         [self makeDesktopDark];
