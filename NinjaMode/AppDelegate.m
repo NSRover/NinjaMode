@@ -23,11 +23,12 @@
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     _statusItem.image = [NSImage imageNamed:@"switchIcon.png"];
     [_statusItem.image setTemplate:YES];
-
+    
     _statusItem.highlightMode = NO;
     _statusItem.toolTip = @"control-click to quit";
     
     [_statusItem setAction:@selector(itemClicked:)];
+    
     [self refreshDarkMode];
 }
 
@@ -42,44 +43,47 @@
 }
 
 - (void)itemClicked:(id)sender {
-
+    
+    //Look for control click
     NSEvent *event = [NSApp currentEvent];
     if([event modifierFlags] & NSControlKeyMask) {
         [[NSApplication sharedApplication] terminate:self];
         return;
     }
     
+    //Toggle darkMode
     _darkModeOn = !_darkModeOn;
-    
-    //Change pref
+
+    //Change theme
+    [self toggleTheme];
+
+    //Change desktop
     if (_darkModeOn) {
-        [self makeItDark];
+        [self makeDesktopDark];
     }
     else {
-        [self makeItBright];
+        [self makeDesktopBright];
     }
 }
 
-- (void)makeItDark {
-    //Set theme and update listeners
-    CFPreferencesSetValue((CFStringRef)@"AppleInterfaceStyle", @"Dark", kCFPreferencesAnyApplication, kCFPreferencesCurrentUser, kCFPreferencesCurrentHost);
-    dispatch_async(dispatch_get_main_queue(), ^{
-        CFNotificationCenterPostNotification(CFNotificationCenterGetDistributedCenter(), (CFStringRef)@"AppleInterfaceThemeChangedNotification", NULL, NULL, YES);
-    });
-    
-    //set wallpaper
-    [self changeWallpaperWithImagePath:[@"~/Documents/NinjaModes/dark.png" stringByExpandingTildeInPath]];
+- (void)toggleTheme {
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"ThemeToggle" ofType:@"scpt"];
+    NSURL* url = [NSURL fileURLWithPath:path];
+    NSDictionary* errors = [NSDictionary dictionary];
+    NSAppleScript* appleScript = [[NSAppleScript alloc] initWithContentsOfURL:url error:&errors];
+    [appleScript executeAndReturnError:nil];
 }
 
-- (void)makeItBright {
-    //Set theme and update listeners
-    CFPreferencesSetValue((CFStringRef)@"AppleInterfaceStyle", NULL, kCFPreferencesAnyApplication, kCFPreferencesCurrentUser, kCFPreferencesCurrentHost);
-    dispatch_async(dispatch_get_main_queue(), ^{
-        CFNotificationCenterPostNotification(CFNotificationCenterGetDistributedCenter(), (CFStringRef)@"AppleInterfaceThemeChangedNotification", NULL, NULL, YES);
-    });
-    
+- (void)makeDesktopDark {
     //set wallpaper
-    [self changeWallpaperWithImagePath:[@"~/Documents/NinjaModes/bright.png" stringByExpandingTildeInPath]];
+    [self changeWallpaperWithImagePath:[@"~/Documents/NinjaModes/dark.png"
+                                        stringByExpandingTildeInPath]];
+}
+
+- (void)makeDesktopBright {
+    //set wallpaper
+    [self changeWallpaperWithImagePath:[@"~/Documents/NinjaModes/bright.png"
+                                        stringByExpandingTildeInPath]];
 }
 
 - (void)changeWallpaperWithImagePath:(NSString *)path {
@@ -108,7 +112,7 @@
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     //Attempt to restore things back the way we found them
-    [self makeItBright];
+    [self makeDesktopBright];
 }
 
 @end

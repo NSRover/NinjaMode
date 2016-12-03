@@ -13,6 +13,8 @@
 		BE7C115A19E56B4F001A6220 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE7C115819E56B4F001A6220 /* MainMenu.xib */; };
 		BE7C116619E56B4F001A6220 /* NinjaModeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7C116519E56B4F001A6220 /* NinjaModeTests.m */; };
 		BE7C117019E57841001A6220 /* switchIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7C116F19E57841001A6220 /* switchIcon.png */; };
+		EBC23A051DF34AFB006DB181 /* ThemeToggle.scpt in Resources */ = {isa = PBXBuildFile; fileRef = EBC23A041DF34AFB006DB181 /* ThemeToggle.scpt */; };
+		EBC23A071DF34BE3006DB181 /* ThemeToggle.txt in Resources */ = {isa = PBXBuildFile; fileRef = EBC23A061DF34BE3006DB181 /* ThemeToggle.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 		BE7C116419E56B4F001A6220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE7C116519E56B4F001A6220 /* NinjaModeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NinjaModeTests.m; sourceTree = "<group>"; };
 		BE7C116F19E57841001A6220 /* switchIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switchIcon.png; sourceTree = "<group>"; };
+		EBC23A041DF34AFB006DB181 /* ThemeToggle.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThemeToggle.scpt; sourceTree = "<group>"; };
+		EBC23A061DF34BE3006DB181 /* ThemeToggle.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ThemeToggle.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 		BE7C114E19E56B4F001A6220 /* NinjaMode */ = {
 			isa = PBXGroup;
 			children = (
+				EBC23A061DF34BE3006DB181 /* ThemeToggle.txt */,
 				BE7C116F19E57841001A6220 /* switchIcon.png */,
 				BE7C115319E56B4F001A6220 /* AppDelegate.h */,
 				BE7C115419E56B4F001A6220 /* AppDelegate.m */,
@@ -93,6 +98,7 @@
 			children = (
 				BE7C115019E56B4F001A6220 /* Info.plist */,
 				BE7C115119E56B4F001A6220 /* main.m */,
+				EBC23A041DF34AFB006DB181 /* ThemeToggle.scpt */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -195,8 +201,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE7C117019E57841001A6220 /* switchIcon.png in Resources */,
+				EBC23A051DF34AFB006DB181 /* ThemeToggle.scpt in Resources */,
 				BE7C115719E56B4F001A6220 /* Images.xcassets in Resources */,
 				BE7C115A19E56B4F001A6220 /* MainMenu.xib in Resources */,
+				EBC23A071DF34BE3006DB181 /* ThemeToggle.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

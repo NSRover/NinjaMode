@@ -1,0 +1,6 @@
+# ThemeToggle as .txt for reference.
+# Compiled applescript ThemeToggle.scpt can be found under Supporting Files directory
+
+tell application "System Events"
+    tell appearance preferences to set dark mode to not dark mode
+end tell
