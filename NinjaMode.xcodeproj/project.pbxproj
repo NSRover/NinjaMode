@@ -13,6 +13,8 @@
 		BE7C115A19E56B4F001A6220 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE7C115819E56B4F001A6220 /* MainMenu.xib */; };
 		BE7C116619E56B4F001A6220 /* NinjaModeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7C116519E56B4F001A6220 /* NinjaModeTests.m */; };
 		BE7C117019E57841001A6220 /* switchIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7C116F19E57841001A6220 /* switchIcon.png */; };
+		EBC23A051DF34AFB006DB181 /* ThemeToggle.scpt in Resources */ = {isa = PBXBuildFile; fileRef = EBC23A041DF34AFB006DB181 /* ThemeToggle.scpt */; };
+		EBC23A071DF34BE3006DB181 /* ThemeToggle.txt in Resources */ = {isa = PBXBuildFile; fileRef = EBC23A061DF34BE3006DB181 /* ThemeToggle.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 		BE7C116419E56B4F001A6220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE7C116519E56B4F001A6220 /* NinjaModeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NinjaModeTests.m; sourceTree = "<group>"; };
 		BE7C116F19E57841001A6220 /* switchIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switchIcon.png; sourceTree = "<group>"; };
+		EBC23A041DF34AFB006DB181 /* ThemeToggle.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThemeToggle.scpt; sourceTree = "<group>"; };
+		EBC23A061DF34BE3006DB181 /* ThemeToggle.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ThemeToggle.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 		BE7C114E19E56B4F001A6220 /* NinjaMode */ = {
 			isa = PBXGroup;
 			children = (
+				EBC23A061DF34BE3006DB181 /* ThemeToggle.txt */,
 				BE7C116F19E57841001A6220 /* switchIcon.png */,
 				BE7C115319E56B4F001A6220 /* AppDelegate.h */,
 				BE7C115419E56B4F001A6220 /* AppDelegate.m */,
@@ -93,6 +98,7 @@
 			children = (
 				BE7C115019E56B4F001A6220 /* Info.plist */,
 				BE7C115119E56B4F001A6220 /* main.m */,
+				EBC23A041DF34AFB006DB181 /* ThemeToggle.scpt */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -158,7 +164,7 @@
 		BE7C114419E56B4F001A6220 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = NSRover;
 				TargetAttributes = {
 					BE7C114B19E56B4F001A6220 = {
@@ -195,8 +201,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE7C117019E57841001A6220 /* switchIcon.png in Resources */,
+				EBC23A051DF34AFB006DB181 /* ThemeToggle.scpt in Resources */,
 				BE7C115719E56B4F001A6220 /* Images.xcassets in Resources */,
 				BE7C115A19E56B4F001A6220 /* MainMenu.xib in Resources */,
+				EBC23A071DF34BE3006DB181 /* ThemeToggle.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,15 +270,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -303,8 +315,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -313,6 +327,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -332,6 +347,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = NinjaMode/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nsrover.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -343,6 +359,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = NinjaMode/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nsrover.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -362,6 +379,7 @@
 				);
 				INFOPLIST_FILE = NinjaModeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nsrover.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NinjaMode.app/Contents/MacOS/NinjaMode";
 			};
@@ -378,6 +396,7 @@
 				);
 				INFOPLIST_FILE = NinjaModeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nsrover.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NinjaMode.app/Contents/MacOS/NinjaMode";
 			};
@@ -402,6 +421,7 @@
 				BE7C116B19E56B4F001A6220 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE7C116C19E56B4F001A6220 /* Build configuration list for PBXNativeTarget "NinjaModeTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +430,7 @@
 				BE7C116E19E56B4F001A6220 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
