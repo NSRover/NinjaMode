@@ -1,4 +1,5 @@
 # !/bin/bash
+xcodebuild -target "NinjaMode" -configuration "Debug" CONFIGURATION_BUILD_DIR='TestBuild'
 
 # write out path needed
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"

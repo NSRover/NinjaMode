@@ -1,6 +1,9 @@
 # !/bin/bash
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-file_path=$DIR/../../
-echo $file_path
-say "if corectly installed this will be the appliction path, $file_path"
+# echo $DIR/../../
+
+# xcode-select --switch /Applications/Xcode.app/Contents/Developer
+# xcodebuild -target "NinjaMode" -configuration "Debug" CONFIGURATION_BUILD_DIR='TestBuild'
+# sleep 10;
+open $DIR/../../TestBuild/NinjaMode.app/
