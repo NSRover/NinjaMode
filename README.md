@@ -8,13 +8,24 @@ This little menubar utility give a quick way to toggle between the modes.
 (To quit the app, you need to control-click the icon)
 
 ## Installation:
-ensure that you have xcode command line tools installed.
 ```
 git clone https://github.com/NSRover/NinjaMode.git
 cd NinjaMode
 
-sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
-xcodebuild -target "NinjaMode.xcodeproj" -scheme "NinjaMode" -configuration "Debug" CONFIGURATION_BUILD_DIR='TestBuild'
-open TestBuild/NinjaMode.app/
-
+./mac_plist_launch_agent/app/install_driver.sh 
 ```
+## Removing LaunchAgent
+```
+./mac_plist_launch_agent/app/uninstall_driver.sh
+
+ctrl click to end the application;
+```
+
+## Summary: 
+
+<b>Install</b>, upon restart computer program will auto add to menubar.
+
+<b>Uninstall</b>, upon computer restart program not auto add to menubar.
+
+## Launch Agent information:
+Launch Agent adapted from: https://github.com/MichaelDimmitt/mac_plist_launch_agent.git
