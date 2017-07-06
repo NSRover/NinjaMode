@@ -3,6 +3,7 @@
 //  NinjaMode
 //
 //  Created by Nirbhay Agarwal on 08/10/14.
+//  Updated by Benedikt-Alexander Mokroß on 21/04/2017 (Fixed depricated API).
 //  Copyright (c) 2014 NSRover. All rights reserved.
 //
 
@@ -21,13 +22,15 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    _statusItem.image = [NSImage imageNamed:@"switchIcon.png"];
-    [_statusItem.image setTemplate:YES];
     
-    _statusItem.highlightMode = NO;
-    _statusItem.toolTip = @"control-click to quit";
+    NSStatusBarButton* statusBarButton = _statusItem.button;
+    statusBarButton.image = [NSImage imageNamed:@"switchIcon.png"];
+    [statusBarButton.image setTemplate:YES];
     
-    [_statusItem setAction:@selector(itemClicked:)];
+    statusButton.highlighted = NO;
+    statusBarButton.toolTip = @"control-click to quit";
+    
+    [statusBarButton setAction:@selector(itemClicked:)];
     
     [self refreshDarkMode];
 }
