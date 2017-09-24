@@ -27,7 +27,7 @@
     statusBarButton.image = [NSImage imageNamed:@"switchIcon.png"];
     [statusBarButton.image setTemplate:YES];
     
-    statusButton.highlighted = NO;
+    statusBarButton.highlighted = NO;
     statusBarButton.toolTip = @"control-click to quit";
     
     [statusBarButton setAction:@selector(itemClicked:)];
